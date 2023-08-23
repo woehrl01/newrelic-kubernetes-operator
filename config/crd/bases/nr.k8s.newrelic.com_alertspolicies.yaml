@@ -14,7 +14,7 @@ spec:
     plural: alertspolicies
     singular: alertspolicy
   scope: Namespaced
-  validation:
+  schema:
     openAPIV3Schema:
       description: AlertsPolicy is the Schema for the policies API
       properties:

@@ -14,7 +14,7 @@ spec:
     plural: alertschannels
     singular: alertschannel
   scope: Namespaced
-  validation:
+  schema:
     openAPIV3Schema:
       description: AlertsChannel is the Schema for the AlertsChannel API
       properties:

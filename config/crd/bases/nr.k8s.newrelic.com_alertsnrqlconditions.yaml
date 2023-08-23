@@ -14,7 +14,7 @@ spec:
     plural: alertsnrqlconditions
     singular: alertsnrqlcondition
   scope: Namespaced
-  validation:
+  schema:
     openAPIV3Schema:
       description:
         AlertsNrqlCondition is the Schema for the alertsnrqlconditions

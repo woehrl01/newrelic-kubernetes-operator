@@ -14,7 +14,7 @@ spec:
     plural: apmalertconditions
     singular: apmalertcondition
   scope: Namespaced
-  validation:
+  schema:
     openAPIV3Schema:
       description: ApmAlertCondition is the Schema for the apmalertconditions API
       properties:

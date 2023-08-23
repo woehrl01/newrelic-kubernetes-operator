@@ -14,7 +14,7 @@ spec:
     plural: nrqlalertconditions
     singular: nrqlalertcondition
   scope: Namespaced
-  validation:
+  schema:
     openAPIV3Schema:
       description: NrqlAlertCondition is the Schema for the nrqlalertconditions API
       properties:

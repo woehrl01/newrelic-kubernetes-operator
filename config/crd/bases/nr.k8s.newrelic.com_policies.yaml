@@ -14,7 +14,7 @@ spec:
     plural: policies
     singular: policy
   scope: Namespaced
-  validation:
+  schema:
     openAPIV3Schema:
       description: Policy is the Schema for the policies API
       properties:

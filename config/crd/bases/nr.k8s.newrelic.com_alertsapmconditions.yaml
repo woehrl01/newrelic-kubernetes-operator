@@ -14,7 +14,7 @@ spec:
     plural: alertsapmconditions
     singular: alertsapmcondition
   scope: Namespaced
-  validation:
+  schema:
     openAPIV3Schema:
       description: AlertsAPMCondition is the Schema for the alertsapmconditions API
       properties:
