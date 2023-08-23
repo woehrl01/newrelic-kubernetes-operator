@@ -4,5 +4,5 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    cert-manager.io/inject-ca-from: newrelic-kubernetes-operator/serving-certserving-cert
+    cert-manager.io/inject-ca-from: newrelic-kubernetes-operator/newrelic-kubernetes-operator-serving-cert
   name: alertschannels.nr.k8s.newrelic.com
