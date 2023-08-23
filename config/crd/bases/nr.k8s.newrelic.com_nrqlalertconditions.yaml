@@ -18,12 +18,12 @@ spec:
     - name: v1
       served: true
       storage: true
+      additionalPrinterColumns:
+        - jsonPath: .status.created
+          name: Created
+          type: boolean
       schema:
         openAPIV3Schema:
-          additionalPrinterColumns:
-            - JSONPath: .status.created
-              name: Created
-              type: boolean
           description: NrqlAlertCondition is the Schema for the nrqlalertconditions API
           properties:
             apiVersion:
