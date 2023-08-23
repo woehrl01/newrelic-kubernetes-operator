@@ -185,6 +185,9 @@ webhooks:
         resources:
           - alertsapmconditions
     sideEffects: None
+    admissionReviewVersions:
+      - v1
+      - v1beta1
   - clientConfig:
       caBundle: Cg==
       service:
@@ -204,6 +207,9 @@ webhooks:
         resources:
           - alertsnrqlconditions
     sideEffects: None
+    admissionReviewVersions:
+      - v1
+      - v1beta1
   - clientConfig:
       caBundle: Cg==
       service:
@@ -223,6 +229,9 @@ webhooks:
         resources:
           - alertspolicies
     sideEffects: None
+    admissionReviewVersions:
+      - v1
+      - v1beta1
   - clientConfig:
       caBundle: Cg==
       service:
@@ -242,6 +251,9 @@ webhooks:
         resources:
           - alertschannels
     sideEffects: None
+    admissionReviewVersions:
+      - v1
+      - v1beta1
   - clientConfig:
       caBundle: Cg==
       service:
@@ -261,6 +273,9 @@ webhooks:
         resources:
           - apmalertconditions
     sideEffects: None
+    admissionReviewVersions:
+      - v1
+      - v1beta1
   - clientConfig:
       caBundle: Cg==
       service:
@@ -280,6 +295,9 @@ webhooks:
         resources:
           - nrqlalertconditions
     sideEffects: None
+    admissionReviewVersions:
+      - v1
+      - v1beta1
   - clientConfig:
       caBundle: Cg==
       service:
@@ -299,3 +317,6 @@ webhooks:
         resources:
           - policies
     sideEffects: None
+    admissionReviewVersions:
+      - v1
+      - v1beta1
