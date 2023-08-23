@@ -17,8 +17,8 @@ metadata:
 spec:
   # webhook-service and system will be substituted by kustomize
   dnsNames:
-    - webhook-service.system.svc
-    - webhook-service.system.svc.cluster.local
+    - newrelic-kubernetes-operator-webhook-service.newrelic-kubernetes-operator.svc
+    - newrelic-kubernetes-operator-webhook-service.newrelic-kubernetes-operator.svc.cluster.local
   issuerRef:
     kind: Issuer
     name: selfsigned-issuer
