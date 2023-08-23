@@ -1,6 +1,5 @@
-
 ---
-apiVersion: apiextensions.k8s.io/v1beta1
+apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
@@ -9,9 +8,9 @@ metadata:
   name: alertsnrqlconditions.nr.k8s.newrelic.com
 spec:
   additionalPrinterColumns:
-  - JSONPath: .status.created
-    name: Created
-    type: boolean
+    - JSONPath: .status.created
+      name: Created
+      type: boolean
   group: nr.k8s.newrelic.com
   names:
     kind: AlertsNrqlCondition
@@ -22,18 +21,21 @@ spec:
   subresources: {}
   validation:
     openAPIV3Schema:
-      description: AlertsNrqlCondition is the Schema for the alertsnrqlconditions
+      description:
+        AlertsNrqlCondition is the Schema for the alertsnrqlconditions
         API
       properties:
         apiVersion:
-          description: 'APIVersion defines the versioned schema of this representation
+          description:
+            "APIVersion defines the versioned schema of this representation
             of an object. Servers should convert recognized schemas to the latest
-            internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources"
           type: string
         kind:
-          description: 'Kind is a string value representing the REST resource this
+          description:
+            "Kind is a string value representing the REST resource this
             object represents. Servers may infer this from the endpoint the client
-            submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds"
           type: string
         metadata:
           type: object
@@ -55,7 +57,8 @@ spec:
               type: object
             apm_terms:
               items:
-                description: AlertConditionTerm represents the terms of a New Relic
+                description:
+                  AlertConditionTerm represents the terms of a New Relic
                   alert condition.
                 properties:
                   duration:
@@ -71,7 +74,7 @@ spec:
                   violation_close_timer:
                     type: integer
                 required:
-                - threshold
+                  - threshold
                 type: object
               type: array
             baseline_direction:
@@ -86,7 +89,8 @@ spec:
             expected_groups:
               type: integer
             expiration:
-              description: AlertsNrqlConditionExpiration Settings for how violations
+              description:
+                AlertsNrqlConditionExpiration Settings for how violations
                 are opened or closed when a signal expires.
               properties:
                 closeViolationsOnExpiration:
@@ -103,7 +107,8 @@ spec:
             name:
               type: string
             nrql:
-              description: NrqlConditionQuery represents the NRQL query object returned
+              description:
+                NrqlConditionQuery represents the NRQL query object returned
                 in a NerdGraph response object.
               properties:
                 evaluationOffset:
@@ -116,7 +121,8 @@ spec:
             runbook_url:
               type: string
             signal:
-              description: AlertsNrqlConditionSignal - Configuration that defines
+              description:
+                AlertsNrqlConditionSignal - Configuration that defines
                 the signal that the NRQL condition will use to evaluate.
               properties:
                 aggregation_window:
@@ -131,15 +137,18 @@ spec:
               type: object
             terms:
               items:
-                description: AlertsNrqlConditionTerm represents the terms of a New
+                description:
+                  AlertsNrqlConditionTerm represents the terms of a New
                   Relic alert condition.
                 properties:
                   operator:
-                    description: AlertsNRQLConditionTermsOperator - Operator used
+                    description:
+                      AlertsNRQLConditionTermsOperator - Operator used
                       to compare against the threshold for NrqlConditions.
                     type: string
                   priority:
-                    description: NrqlConditionPriority specifies the priority for
+                    description:
+                      NrqlConditionPriority specifies the priority for
                       alert condition terms.
                     type: string
                   threshold:
@@ -147,7 +156,8 @@ spec:
                   threshold_duration:
                     type: integer
                   threshold_occurrences:
-                    description: ThresholdOccurrence specifies the threshold occurrence
+                    description:
+                      ThresholdOccurrence specifies the threshold occurrence
                       for NRQL alert condition terms.
                     type: string
                 type: object
@@ -156,15 +166,17 @@ spec:
               description: NrqlConditionType specifies the type of NRQL alert condition.
               type: string
             valueFunction:
-              description: NrqlConditionValueFunction specifies the value function
+              description:
+                NrqlConditionValueFunction specifies the value function
                 of NRQL alert condition.
               type: string
             violationTimeLimit:
-              description: NrqlConditionViolationTimeLimit specifies the value function
+              description:
+                NrqlConditionViolationTimeLimit specifies the value function
                 of NRQL alert condition.
               type: string
           required:
-          - enabled
+            - enabled
           type: object
         status:
           description: AlertsNrqlConditionStatus defines the observed state of AlertsNrqlCondition
@@ -187,7 +199,8 @@ spec:
                   type: object
                 apm_terms:
                   items:
-                    description: AlertConditionTerm represents the terms of a New
+                    description:
+                      AlertConditionTerm represents the terms of a New
                       Relic alert condition.
                     properties:
                       duration:
@@ -203,7 +216,7 @@ spec:
                       violation_close_timer:
                         type: integer
                     required:
-                    - threshold
+                      - threshold
                     type: object
                   type: array
                 baseline_direction:
@@ -218,7 +231,8 @@ spec:
                 expected_groups:
                   type: integer
                 expiration:
-                  description: AlertsNrqlConditionExpiration Settings for how violations
+                  description:
+                    AlertsNrqlConditionExpiration Settings for how violations
                     are opened or closed when a signal expires.
                   properties:
                     closeViolationsOnExpiration:
@@ -235,7 +249,8 @@ spec:
                 name:
                   type: string
                 nrql:
-                  description: NrqlConditionQuery represents the NRQL query object
+                  description:
+                    NrqlConditionQuery represents the NRQL query object
                     returned in a NerdGraph response object.
                   properties:
                     evaluationOffset:
@@ -248,7 +263,8 @@ spec:
                 runbook_url:
                   type: string
                 signal:
-                  description: AlertsNrqlConditionSignal - Configuration that defines
+                  description:
+                    AlertsNrqlConditionSignal - Configuration that defines
                     the signal that the NRQL condition will use to evaluate.
                   properties:
                     aggregation_window:
@@ -263,15 +279,18 @@ spec:
                   type: object
                 terms:
                   items:
-                    description: AlertsNrqlConditionTerm represents the terms of a
+                    description:
+                      AlertsNrqlConditionTerm represents the terms of a
                       New Relic alert condition.
                     properties:
                       operator:
-                        description: AlertsNRQLConditionTermsOperator - Operator used
+                        description:
+                          AlertsNRQLConditionTermsOperator - Operator used
                           to compare against the threshold for NrqlConditions.
                         type: string
                       priority:
-                        description: NrqlConditionPriority specifies the priority
+                        description:
+                          NrqlConditionPriority specifies the priority
                           for alert condition terms.
                         type: string
                       threshold:
@@ -279,38 +298,42 @@ spec:
                       threshold_duration:
                         type: integer
                       threshold_occurrences:
-                        description: ThresholdOccurrence specifies the threshold occurrence
+                        description:
+                          ThresholdOccurrence specifies the threshold occurrence
                           for NRQL alert condition terms.
                         type: string
                     type: object
                   type: array
                 type:
-                  description: NrqlConditionType specifies the type of NRQL alert
+                  description:
+                    NrqlConditionType specifies the type of NRQL alert
                     condition.
                   type: string
                 valueFunction:
-                  description: NrqlConditionValueFunction specifies the value function
+                  description:
+                    NrqlConditionValueFunction specifies the value function
                     of NRQL alert condition.
                   type: string
                 violationTimeLimit:
-                  description: NrqlConditionViolationTimeLimit specifies the value
+                  description:
+                    NrqlConditionViolationTimeLimit specifies the value
                     function of NRQL alert condition.
                   type: string
               required:
-              - enabled
+                - enabled
               type: object
             condition_id:
               type: string
           required:
-          - applied_spec
-          - condition_id
+            - applied_spec
+            - condition_id
           type: object
       type: object
   version: v1
   versions:
-  - name: v1
-    served: true
-    storage: true
+    - name: v1
+      served: true
+      storage: true
 status:
   acceptedNames:
     kind: ""
