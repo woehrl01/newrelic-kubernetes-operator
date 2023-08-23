@@ -141,7 +141,6 @@ webhooks:
     admissionReviewVersions:
       - v1
       - v1beta1
-
 ---
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingWebhookConfiguration
@@ -282,6 +281,3 @@ webhooks:
         resources:
           - policies
     sideEffects: None
-    admissionReviewVersions:
-      - v1
-      - v1beta1
