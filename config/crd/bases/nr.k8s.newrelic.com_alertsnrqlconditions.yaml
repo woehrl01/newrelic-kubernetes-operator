@@ -7,10 +7,6 @@ metadata:
   creationTimestamp: null
   name: alertsnrqlconditions.nr.k8s.newrelic.com
 spec:
-  additionalPrinterColumns:
-    - JSONPath: .status.created
-      name: Created
-      type: boolean
   group: nr.k8s.newrelic.com
   names:
     kind: AlertsNrqlCondition
@@ -18,7 +14,6 @@ spec:
     plural: alertsnrqlconditions
     singular: alertsnrqlcondition
   scope: Namespaced
-  subresources: {}
   validation:
     openAPIV3Schema:
       description:
@@ -329,11 +324,14 @@ spec:
             - condition_id
           type: object
       type: object
-  version: v1
   versions:
     - name: v1
       served: true
       storage: true
+      additionalPrinterColumns:
+        - JSONPath: .status.created
+          name: Created
+          type: boolean
 status:
   acceptedNames:
     kind: ""

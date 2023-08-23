@@ -7,10 +7,6 @@ metadata:
   creationTimestamp: null
   name: apmalertconditions.nr.k8s.newrelic.com
 spec:
-  additionalPrinterColumns:
-    - JSONPath: .status.created
-      name: Created
-      type: boolean
   group: nr.k8s.newrelic.com
   names:
     kind: ApmAlertCondition
@@ -18,7 +14,6 @@ spec:
     plural: apmalertconditions
     singular: apmalertcondition
   scope: Namespaced
-  subresources: {}
   validation:
     openAPIV3Schema:
       description: ApmAlertCondition is the Schema for the apmalertconditions API
@@ -203,11 +198,14 @@ spec:
             - condition_id
           type: object
       type: object
-  version: v1
   versions:
     - name: v1
       served: true
       storage: true
+      additionalPrinterColumns:
+        - JSONPath: .status.created
+          name: Created
+          type: boolean
 status:
   acceptedNames:
     kind: ""

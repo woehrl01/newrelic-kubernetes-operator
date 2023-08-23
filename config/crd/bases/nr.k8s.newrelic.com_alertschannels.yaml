@@ -7,10 +7,6 @@ metadata:
   creationTimestamp: null
   name: alertschannels.nr.k8s.newrelic.com
 spec:
-  additionalPrinterColumns:
-    - JSONPath: .status.created
-      name: Created
-      type: boolean
   group: nr.k8s.newrelic.com
   names:
     kind: AlertsChannel
@@ -18,7 +14,6 @@ spec:
     plural: alertschannels
     singular: alertschannel
   scope: Namespaced
-  subresources: {}
   validation:
     openAPIV3Schema:
       description: AlertsChannel is the Schema for the AlertsChannel API
@@ -248,11 +243,14 @@ spec:
             - channel_id
           type: object
       type: object
-  version: v1
   versions:
     - name: v1
       served: true
       storage: true
+      additionalPrinterColumns:
+        - JSONPath: .status.created
+          name: Created
+          type: boolean
 status:
   acceptedNames:
     kind: ""
