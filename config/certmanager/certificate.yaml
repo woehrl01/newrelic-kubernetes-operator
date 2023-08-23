@@ -5,7 +5,7 @@ apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
   name: selfsigned-issuer
-  namespace: system
+  namespace: newrelic-kubernetes-operator
 spec:
   selfSigned: {}
 ---
@@ -13,7 +13,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: serving-cert # this name should match the one appeared in kustomizeconfig.yaml
-  namespace: system
+  namespace: newrelic-kubernetes-operator
 spec:
   # webhook-service and system will be substituted by kustomize
   dnsNames:

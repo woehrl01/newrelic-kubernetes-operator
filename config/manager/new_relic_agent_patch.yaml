@@ -2,18 +2,18 @@
 # to enable New Relic agent to send events about the operator behavior itself.
 
 ---
-  apiVersion: apps/v1
-  kind: Deployment
-  metadata:
-    name: controller-manager
-    namespace: system
-  spec:
-    selector:
-      matchLabels:
-        control-plane: controller-manager
-    template:
-      spec:
-        containers:
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: controller-manager
+  namespace: newrelic-kubernetes-operator
+spec:
+  selector:
+    matchLabels:
+      control-plane: controller-manager
+  template:
+    spec:
+      containers:
         - name: manager
           env:
             - name: NEW_RELIC_LICENSE_KEY
@@ -44,4 +44,3 @@
                   optional: true
             - name: NEW_RELIC_DISTRIBUTED_TRACING_ENABLED
               value: "true"
-          
